@@ -25,7 +25,7 @@ resource "yandex_compute_instance" "vm-1" {
   }
 
   network_interface {
-    subnet_id = yandex_vpc_subnet.subnet-1.id
+    subnet_id = var.subnet_id
     nat       = true
   }
 
@@ -34,6 +34,7 @@ resource "yandex_compute_instance" "vm-1" {
   }
 }
 
+/*
 resource "yandex_compute_instance" "vm-2" {
   name = "terraform2"
 
@@ -49,7 +50,7 @@ resource "yandex_compute_instance" "vm-2" {
   }
 
   network_interface {
-    subnet_id = yandex_vpc_subnet.subnet-1.id
+    subnet_id = var.subnet_id
     nat       = true
   }
 
@@ -57,3 +58,4 @@ resource "yandex_compute_instance" "vm-2" {
     ssh-keys = "ubuntu:${file("~/.ssh/id_rsa.pub")}"
   }
 }
+*/
